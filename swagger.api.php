@@ -20,7 +20,7 @@
  *   The operation object that will be appended to the methods operations
  *   property.
  */
-function hook_swagger_api_operation_alter(&$method, &$operation) {
+function hook_swagger_api_operation_alter(array &$method, array &$operation) {
   if ($method['path'] == '/node/{nid}.{format}' && $operation['method'] == 'GET') {
     $operation['notes'] = '<p>Additional fields may be found depending on the bundle of the node being retrieved.</p>';
 
@@ -42,7 +42,7 @@ function hook_swagger_api_operation_alter(&$method, &$operation) {
  *
  * @see hook_service_resource_alter()
  */
-function hook_swagger_api_alter(&$api_data) {
+function hook_swagger_api_alter(array &$api_data) {
   if ($api_data['resourcePath'] == '/user') {
     foreach ($api_data['apis'] as &$api) {
       if ($api['path'] == '/user/{uid}.{format}') {

@@ -293,9 +293,7 @@ function swagger_api_resource($endpoint, $resource) {
       $summary = '';
       $notes = '';
       if (isset($method_data['help'])) {
-        $summary = strlen($method_data['help']) > 60 ?
-          substr($method_data['help'], 0, 57) . '...' :
-          $method_data['help'];
+        $summary = strlen($method_data['help']) > 60 ? substr($method_data['help'], 0, 57) . '...' : $method_data['help'];
         $notes = $method_data['help'];
       }
 
@@ -507,7 +505,7 @@ function swagger_api_resource($endpoint, $resource) {
  *   The HTTP method for the given operation and method, or FALSE if one could
  *   not be found.
  */
-function _swagger_api_get_method($group, $method, &$path) {
+function _swagger_api_get_method($group, $method, array &$path) {
   switch ($group) {
     case 'operations':
       switch ($method) {

@@ -2,6 +2,7 @@
  * @file
  * Javascript to invoke the Swagger UI library.
  */
+
 (function($) {
   "use strict";
 

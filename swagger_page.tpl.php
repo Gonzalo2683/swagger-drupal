@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Template for displaying the necessary elements for the Swagger UI to populate.
+ * Template for displaying the necessary tags for the Swagger UI to populate.
  *
  * The swagger ui javascript loads the data via ajax and populates
  * #swagger-ui-container. Swaggers css is based around the .swagger-section

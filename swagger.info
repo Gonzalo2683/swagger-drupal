@@ -1,6 +1,5 @@
 name = Swagger
 description = Document RESTful Endpoints with Swagger
 dependencies[] = services
-version = 7.x-1.x-dev
 package = Services
 core = 7.x
