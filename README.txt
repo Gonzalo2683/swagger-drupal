@@ -2,7 +2,7 @@ INTRODUCTION
 ------------
 Swagger is a library for documenting RESTful services provided by wordnik.
 
-Documentation can be found at https://github.com/wordnik/swagger-core/wiki
+Documentation can be found at https://github.com/swagger-api/swagger-spec
 
 This module will generate swagger-parsable json documentation for each service.
 If provided with the swagger-ui library, it will also provide a page to display
@@ -13,6 +13,9 @@ REQUIREMENTS
 ------------
 This module requires the following modules:
  * Services (https://www.drupal.org/project/services)
+
+If using the Swagger UI library, the following modules are also necessary:
+ * Libraries (https://www.drupal.org/project/libraries)
 
 
 INSTALLATION
