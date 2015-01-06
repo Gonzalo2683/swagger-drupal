@@ -31,24 +31,26 @@ function swagger_menu() {
     'delivery callback' => 'drupal_json_output',
   );
 
-  $swagger = libraries_detect('swagger');
-  if ($swagger && $swagger['installed']) {
-    // Convenience page for listing all the swagger api pages.
-    $items['admin/structure/services/swagger'] = array(
-      'title' => 'Swagger APIs',
-      'page callback' => 'swagger_list_page',
-      'type' => MENU_LOCAL_TASK,
-      'access arguments' => array('view swagger'),
-    );
+  if (module_exists('libraries')) {
+    $swagger = libraries_detect('swagger');
+    if ($swagger && $swagger['installed']) {
+      // Convenience page for listing all the swagger api pages.
+      $items['admin/structure/services/swagger'] = array(
+        'title' => 'Swagger APIs',
+        'page callback' => 'swagger_list_page',
+        'type' => MENU_LOCAL_TASK,
+        'access arguments' => array('view swagger'),
+      );
 
-    // Display the Swagger UI for an endpoint.
-    $items['admin/structure/services/list/%/swagger'] = array(
-      'title' => 'Swagger API',
-      'page callback' => 'swagger_page',
-      'page arguments' => array(4),
-      'type' => MENU_LOCAL_TASK,
-      'access arguments' => array('view swagger'),
-    );
+      // Display the Swagger UI for an endpoint.
+      $items['admin/structure/services/list/%/swagger'] = array(
+        'title' => 'Swagger API',
+        'page callback' => 'swagger_page',
+        'page arguments' => array(4),
+        'type' => MENU_LOCAL_TASK,
+        'access arguments' => array('view swagger'),
+      );
+    }
   }
 
   return $items;
@@ -191,7 +193,6 @@ function swagger_api_page($endpoint) {
   }
 
   $authorizations = array();
-  var_dump($server);die();
 
   $api_data = array(
     'swaggerVersion' => '1.2',
