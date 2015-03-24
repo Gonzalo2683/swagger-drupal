@@ -73,7 +73,7 @@ function swagger_permission() {
 function swagger_libraries_info() {
   return array(
     'swagger' => array(
-      'name' => 'Swagger UI',
+      'name' => t('Swagger UI'),
       'vendor url' => 'http://swagger.wordnik.com/',
       'download url' => 'https://github.com/wordnik/swagger-ui',
       'version' => '1.2',

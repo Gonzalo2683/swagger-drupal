@@ -6,9 +6,9 @@
  */
 
 /**
- * Implements hook_install().
+ * Implements hook_enable().
  */
-function swagger_install() {
+function swagger_enable() {
   $t = get_t();
   drupal_set_message($t('Swagger JSON is now available for your services at /admin/structure/services/list/&lt;endpoint&gt;/swagger/api. You can also install the Swagger UI library for pages displaying the endpoint documentation. For more information, see README.txt'));
 }
