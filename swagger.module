@@ -145,14 +145,12 @@ function swagger_list_page() {
  */
 function swagger_page($endpoint) {
 
-  if (!empty($endpoint)) {
-    drupal_add_js(drupal_get_path('module', 'swagger') . '/swagger.js');
-    drupal_add_js(array(
-      'swagger' => array(
-        'endpoint' => url('admin/structure/services/list/' . $endpoint . '/swagger/api', array('absolute' => TRUE)),
-      ),
-    ), 'setting');
-  }
+  drupal_add_js(drupal_get_path('module', 'swagger') . '/swagger.js');
+  drupal_add_js(array(
+    'swagger' => array(
+      'endpoint' => url('admin/structure/services/list/' . $endpoint . '/swagger/api', array('absolute' => TRUE)),
+    ),
+  ), 'setting');
 
   libraries_load('swagger');
 
@@ -174,7 +172,7 @@ function swagger_page($endpoint) {
 function swagger_api_page($endpoint) {
   if (!function_exists('services_auth_invoke')) {
     // Some versions of services don't seem to include this file.
-    module_load_include('runtime.inc', 'services');
+    module_load_include('inc', 'services', 'services.runtime');
   }
 
   $server = services_endpoint_load($endpoint);
