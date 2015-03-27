@@ -231,7 +231,7 @@ function swagger_api_page($endpoint) {
 function swagger_api_resource($endpoint, $resource) {
   if (!function_exists('services_auth_invoke')) {
     // Some versions of services don't seem to include this file.
-    module_load_include('runtime.inc', 'services');
+    module_load_include('inc', 'services', 'services.runtime');
   }
 
   $server = services_endpoint_load($endpoint);
