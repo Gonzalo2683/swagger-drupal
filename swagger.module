@@ -12,7 +12,7 @@ function swagger_menu() {
   $items = array();
 
   // Callback for the swagger json describing an endpoint.
-  $items['admin/structure/services/list/%/swagger/api'] = array(
+  $items['admin/structure/services/%/swagger/api'] = array(
     'title' => 'Swagger API',
     'page callback' => 'swagger_api_page',
     'page arguments' => array(4),
@@ -22,7 +22,7 @@ function swagger_menu() {
   );
 
   // Callback for the swagger json describing a resource.
-  $items['admin/structure/services/list/%/swagger/api/%'] = array(
+  $items['admin/structure/services/%/swagger/api/%'] = array(
     'title' => 'Swagger API',
     'page callback' => 'swagger_api_resource',
     'page arguments' => array(4, 7),
@@ -43,7 +43,7 @@ function swagger_menu() {
       );
 
       // Display the Swagger UI for an endpoint.
-      $items['admin/structure/services/list/%/swagger'] = array(
+      $items['admin/structure/services/%/swagger'] = array(
         'title' => 'Swagger API',
         'page callback' => 'swagger_page',
         'page arguments' => array(4),
@@ -76,7 +76,7 @@ function swagger_libraries_info() {
       'name' => t('Swagger UI'),
       'vendor url' => 'http://swagger.wordnik.com/',
       'download url' => 'https://github.com/wordnik/swagger-ui',
-      'version' => '1.2',
+      'version' => '1.1.15',
       'files' => array(
         'js' => array(
           'lib/shred.bundle.js',
