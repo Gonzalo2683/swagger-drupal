@@ -12,7 +12,7 @@ function swagger_menu() {
   $items = array();
 
   // Callback for the swagger json describing an endpoint.
-  $items['admin/structure/services/%/swagger/api'] = array(
+  $items['admin/structure/services/list/%/swagger/api'] = array(
     'title' => 'Swagger API',
     'page callback' => 'swagger_api_page',
     'page arguments' => array(4),
@@ -22,7 +22,7 @@ function swagger_menu() {
   );
 
   // Callback for the swagger json describing a resource.
-  $items['admin/structure/services/%/swagger/api/%'] = array(
+  $items['admin/structure/services/list/%/swagger/api/%'] = array(
     'title' => 'Swagger API',
     'page callback' => 'swagger_api_resource',
     'page arguments' => array(4, 7),
@@ -35,7 +35,7 @@ function swagger_menu() {
     $swagger = libraries_detect('swagger');
     if ($swagger && $swagger['installed']) {
       // Convenience page for listing all the swagger api pages.
-      $items['admin/structure/services/swagger'] = array(
+      $items['admin/structure/services/list/swagger'] = array(
         'title' => 'Swagger APIs',
         'page callback' => 'swagger_list_page',
         'type' => MENU_LOCAL_TASK,
@@ -43,7 +43,7 @@ function swagger_menu() {
       );
 
       // Display the Swagger UI for an endpoint.
-      $items['admin/structure/services/%/swagger'] = array(
+      $items['admin/structure/services/list/%/swagger'] = array(
         'title' => 'Swagger API',
         'page callback' => 'swagger_page',
         'page arguments' => array(4),
